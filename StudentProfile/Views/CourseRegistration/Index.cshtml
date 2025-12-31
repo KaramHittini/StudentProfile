@@ -1,0 +1,84 @@
+﻿@model StudentProfile.Models.CourseRegistrationModel
+@{
+    ViewData["Title"] = "Course Registration";
+}
+
+<div class="profile-wrapper">
+
+    <div class="profile-header">
+        <span class="portfolio-title">COURSE REGISTRATION</span>
+        <span class="year">2025</span>
+    </div>
+
+    <div class="profile-grid">
+
+        <!-- Available Courses Card -->
+        <div class="card courses-card">
+            <h5>Available Courses</h5>
+            <table class="courses-table">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                        <th>Capacity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in Model.AvailableCourses)
+                    {
+                        <tr>
+                            <td>@course.Code</td>
+                            <td>@course.Name</td>
+                            <td>@course.Credits</td>
+                            <td>@course.CapacityStatus</td>
+                            <td>
+                                @if (course.IsRegistered)
+                                {
+                                    <form method="post" asp-action="DropCourse">
+                                        <input type="hidden" name="courseId" value="@course.Id" />
+                                        <button type="submit" class="btn-drop">Drop</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" asp-action="RegisterCourse">
+                                        <input type="hidden" name="courseId" value="@course.Id" />
+                                        <button type="submit" class="btn-register"
+                                                @(course.CanRegister ? "" : "disabled")>
+                                            Register
+                                        </button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Registered Courses Card -->
+        <div class="card registered-courses-card">
+            <h5>My Registered Courses</h5>
+            <ul>
+                @foreach (var course in Model.RegisteredCourses)
+                {
+                    <li>@course.Code - @course.Name (@course.Credits Credits)</li>
+                }
+            </ul>
+        </div>
+
+        <!-- System Rules Card -->
+        <div class="card rules-card">
+            <h5>System Rules</h5>
+            <ul>
+                <li>Prevents time conflicts between courses</li>
+                <li>Enforces prerequisite rules</li>
+                <li>Limits maximum credit hours per semester</li>
+                <li>Shows course capacity status</li>
+            </ul>
+        </div>
+
+    </div>
+</div>

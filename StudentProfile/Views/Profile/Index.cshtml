@@ -1,0 +1,72 @@
+﻿@model StudentProfile.Models.StudentProfileModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="profile-wrapper">
+
+    <div class="profile-header">
+        <span class="portfolio-title">PORTFOLIO</span>
+        <span class="year">2025</span>
+    </div>
+
+    <div class="profile-grid">
+
+        <!-- Quote Card -->
+        <div class="card quote-card">
+            <p class="quote">
+                “When It Comes To Conception, I Am The Exception”
+            </p>
+            <span class="quote-author">Karam</span>
+        </div>
+
+        <!-- Main Profile Card -->
+        <div class="card main-card">
+            <div class="avatar">
+                <span>👤</span>
+            </div>
+
+            <h2 class="name">@Model.FullName</h2>
+            <p class="major">@Model.Major</p>
+        </div>
+
+        <!-- Skill Card -->
+        <div class="card skill-card">
+            <h5>Skills</h5>
+            <ul>
+                <li>Digital Literacy & Adaptability</li>
+                <li>Inquiry & Critical Thinking</li>
+                <li>Strategic Delegation</li>
+                <li>Analysis</li>
+                <li>Speaking</li>
+                <li>Management</li>
+            </ul>
+        </div>
+
+        <!-- Academic Info Card -->
+        <div class="card experience-card">
+            <h5>Academic Info</h5>
+            <p><strong>University ID:</strong> @Model.UniversityId</p>
+            <p><strong>Degree:</strong> @Model.Degree</p>
+            <p><strong>College:</strong> @Model.College</p>
+            <p><strong>Student Status:</strong> @Model.StudentStatus</p>
+            <p><strong>Study Type:</strong> @Model.StudyType</p>
+            <p><strong>Plan Number:</strong> @Model.PlanNumber</p>
+            <p><strong>Admission Year / Semester:</strong> @Model.AdmissionYearSemester</p>
+            <p><strong>Academic Advisor:</strong> @Model.AcademicAdvisor</p>
+            <p><strong>Expected Graduation:</strong> @Model.ExpectedGraduation</p>
+            <p><strong>Volunteer Hours:</strong> @Model.VolunteerHours</p>
+            <p><strong>GPA:</strong> @Model.GPA</p>
+            <p><strong>Completed Hours:</strong> @Model.CompletedHours</p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="card education-card">
+            <h5>Education</h5>
+            <p>Software Engineering</p>
+            <p>Date of Birth</p>
+            <strong>@Model.DateOfBirth</strong>
+        </div>
+
+    </div>
+</div>

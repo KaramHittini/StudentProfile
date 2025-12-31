@@ -1,0 +1,77 @@
+.profile-wrapper {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff7ec;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.portfolio-title {
+    border: 2px solid #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.year {
+    font-weight: bold;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.quote-card {
+    grid-column: span 1;
+    font-style: italic;
+}
+
+.main-card {
+    grid-column: span 1;
+    text-align: center;
+}
+
+.avatar {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.major {
+    color: gray;
+}
+
+.skill-card {
+    background-color: #8ecae6;
+}
+
+    .skill-card ul {
+        padding-left: 20px;
+    }
+
+.experience-card {
+    background-color: #f77f00;
+    color: white;
+}
+
+.education-card {
+    background-color: #ffffff;
+}
